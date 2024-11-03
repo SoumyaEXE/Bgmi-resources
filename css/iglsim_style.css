@@ -1,18 +1,18 @@
 #mask-canvas {
-    display: none
+    display: none;
 }
 
 #content {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
 }
 
 #phase-changers-container {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-
     margin-left: 20px;
 }
 
@@ -20,15 +20,36 @@
     margin-top: 20px;
     width: 200px;
     height: 50px;
-
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #DC9E2D;
     border: none;
 }
 
+/* Status string styling */
 #status-string, #status-string2 {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        align-items: center;
+    }
+
+    #phase-changers-container {
+        margin-left: 0; /* Remove left margin on smaller screens */
+    }
+
+    .phase-changer {
+        width: 100%; /* Full width for buttons on mobile */
+        max-width: 250px; /* Optional max width to control button size */
+    }
+
+    #status-string, #status-string2 {
+        font-size: 14px; /* Slightly larger text for readability */
+    }
 }
