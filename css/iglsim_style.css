@@ -4,52 +4,52 @@
 
 #content {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
-    flex-wrap: wrap; /* Allows wrapping on small screens */
+    flex-wrap: wrap;
+    padding: 10px;
 }
 
 #phase-changers-container {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    margin-left: 20px;
+    align-items: center;
+    margin: 10px;
 }
 
 .phase-changer {
-    margin-top: 20px;
-    width: 200px;
-    height: 50px;
+    margin: 15px 0;
+    width: 220px;
+    height: 55px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #DC9E2D;
     border: none;
+    padding: 10px;
 }
 
-/* Status string styling */
 #status-string, #status-string2 {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+    text-align: center;
 }
 
-/* Responsive adjustments */
+/* Mobile adjustments */
 @media (max-width: 768px) {
     #content {
-        flex-direction: column; /* Stack content vertically on smaller screens */
-        align-items: center;
-    }
-
-    #phase-changers-container {
-        margin-left: 0; /* Remove left margin on smaller screens */
+        flex-direction: column;
     }
 
     .phase-changer {
-        width: 100%; /* Full width for buttons on mobile */
-        max-width: 250px; /* Optional max width to control button size */
+        width: 90%;
+        max-width: 280px;
+        height: 60px;
+        font-size: 16px;
     }
 
     #status-string, #status-string2 {
-        font-size: 14px; /* Slightly larger text for readability */
+        font-size: 14px;
     }
 }
