@@ -5,26 +5,41 @@
 #content {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
 }
 
 #phase-changers-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px; /* Adjusts spacing between buttons */
+    justify-content: center;
+    gap: 10px; /* Spacing between buttons */
     margin-top: 20px;
+    width: 100%; /* Adjust width for mobile compatibility */
 }
 
 .phase-changer {
-    width: 200px;
-    height: 50px;
+    width: 120px; /* Adjust button width */
+    height: 50px; /* Adjust button height */
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #DC9E2D;
     border: none;
-    color: white;
     text-align: center;
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 600px) {
+    #phase-changers-container {
+        max-width: 600px; /* Max container width for larger screens */
+    }
+}
+
+#erangel-map {
+    width: 100%;
+    max-width: 800px; /* Limit map width for desktop */
+    height: auto;
 }
 
 #status-string, #status-string2 {
