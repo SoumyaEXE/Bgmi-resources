@@ -1,48 +1,57 @@
-body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
+#mask-canvas {
+    display: none;
 }
 
 #content {
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items vertically */
-    margin: 20px; /* Add some margin */
-}
-
-.map-container {
-    margin-bottom: 20px; /* Space between map and buttons */
-}
-
-#erangel-map {
-    max-width: 100%; /* Ensures the image is responsive */
-    height: auto; /* Maintain aspect ratio */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Changed to column for vertical stacking */
+    padding: 10px;
 }
 
 #phase-changers-container {
-    display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    display: grid; /* Changed from flex to grid */
+    grid-template-columns: repeat(5, 1fr); /* Create 5 equal columns */
     gap: 10px; /* Space between buttons */
-    width: 100%; /* Full width for the button container */
-    max-width: 800px; /* Limit the maximum width */
+    margin: 10px;
+    width: 100%; /* Ensure it takes full width */
+    max-width: 1200px; /* Optional: limit the maximum width */
 }
 
 .phase-changer {
-    padding: 10px; /* Add padding inside buttons */
+    margin: 15px 0; /* Adjust as necessary */
+    width: 220px; /* You can adjust this or use 100% */
+    height: 55px;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #DC9E2D;
     border: none;
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-}
-
-.phase-changer:hover {
-    background-color: #D68B1F; /* Darker on hover */
+    padding: 10px;
+    cursor: pointer; /* Add pointer cursor */
 }
 
 #status-string, #status-string2 {
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+    text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    #content {
+        flex-direction: column;
+    }
+
+    .phase-changer {
+        width: 90%; /* Responsive width */
+        max-width: 280px;
+        height: 60px;
+        font-size: 16px;
+    }
+
+    #status-string, #status-string2 {
+        font-size: 14px;
+    }
 }
