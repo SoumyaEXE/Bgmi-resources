@@ -1,49 +1,48 @@
-#mask-canvas {
-    display: none;
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
+    justify-content: center; /* Center content horizontally */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items vertically */
+    margin: 20px; /* Add some margin */
 }
 
-#phase-changers-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; /* Spacing between buttons */
-    margin-top: 20px;
-    width: 100%; /* Adjust width for mobile compatibility */
-}
-
-.phase-changer {
-    width: 120px; /* Adjust button width */
-    height: 50px; /* Adjust button height */
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    background-color: #DC9E2D;
-    border: none;
-    text-align: center;
-}
-
-/* Responsive adjustments */
-@media screen and (min-width: 600px) {
-    #phase-changers-container {
-        max-width: 600px; /* Max container width for larger screens */
-    }
+.map-container {
+    margin-bottom: 20px; /* Space between map and buttons */
 }
 
 #erangel-map {
-    width: 100%;
-    max-width: 800px; /* Limit map width for desktop */
-    height: auto;
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#phase-changers-container {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    gap: 10px; /* Space between buttons */
+    width: 100%; /* Full width for the button container */
+    max-width: 800px; /* Limit the maximum width */
+}
+
+.phase-changer {
+    padding: 10px; /* Add padding inside buttons */
+    font-weight: bold;
+    background-color: #DC9E2D;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.phase-changer:hover {
+    background-color: #D68B1F; /* Darker on hover */
 }
 
 #status-string, #status-string2 {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
