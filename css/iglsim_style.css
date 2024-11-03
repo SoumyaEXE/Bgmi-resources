@@ -4,44 +4,58 @@
 
 #content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 10px;
 }
 
 #phase-changers-container {
-    display: grid; /* Use grid layout for the buttons */
-    grid-template-columns: repeat(5, 1fr); /* 5 columns */
-    gap: 10px; /* Space between buttons */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 10px;
-    width: 100%; /* Full width */
-    max-width: 1200px; /* Limit the maximum width */
 }
 
 .phase-changer {
-    height: 55px; /* Button height */
+    margin: 10px;
+    width: 200px;
+    height: 48px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: #DC9E2D;
     border: none;
-    cursor: pointer; /* Pointer cursor for buttons */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.phase-changer:hover {
+    background-color: #E0A736;
+}
+
+#status-string, #status-string2 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
     #content {
-        flex-direction: column; /* Stack elements vertically on mobile */
+        flex-direction: column;
     }
 
     .phase-changer {
-        width: 90%; /* Responsive width for buttons */
-        max-width: 280px; /* Limit max width */
-        height: 60px; /* Height for mobile */
-        font-size: 16px; /* Font size for mobile */
+        width: 85%;
+        max-width: 250px;
+        height: 54px;
+        font-size: 15px;
     }
-    
+
     #status-string, #status-string2 {
-        font-size: 14px; /* Font size for mobile */
+        font-size: 14px;
     }
 }
