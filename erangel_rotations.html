@@ -10,35 +10,20 @@
             background-color: #121212;
             color: #ffffff;
             font-family: Arial, sans-serif;
-        }
-        .navbar {
-            width: 100%;
-            background-color: #333;
-            overflow: hidden;
-            position: relative;
-            z-index: 1000;
-        }
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+            margin: 0;
+            padding: 0;
         }
         .map-container {
             position: relative;
-            max-width: 100%;
-            margin: 0 auto;
+            display: inline-block;
+            margin-top: 20px;
         }
         #erangel-map {
             max-width: 100%;
             height: auto;
+            display: block;
         }
+        /* Style for the clickable boxes */
         .box {
             position: absolute;
             width: 60px;
@@ -61,35 +46,28 @@
 <body>
 
     <h1>Erangel Map - Competitive Rotations</h1>
+    
     <div class="map-container">
         <img src="Erangel_PNG.png" alt="Erangel Map" id="erangel-map">
         
-        <!-- Clickable boxes at each drop location -->
-        <a href="school.html" class="box" style="top: 789px; left: 994px;" title="School"></a>
-        <a href="rozhok.html" class="box" style="top: 689px; left: 946px;" title="Rozhok"></a>
-        <a href="pochinki.html" class="box" style="top: 958px; left: 814px;" title="Pochinki"></a>
-        <a href="severny.html" class="box" style="top: 260px; left: 883px;" title="Severny"></a>
-        <a href="base.html" class="box" style="top: 1527px; left: 940px;" title="Military Base"></a>
-        <a href="novo.html" class="box" style="top: 1439px; left: 1381px;" title="Novo"></a>
-        <a href="mylta.html" class="box" style="top: 1125px; left: 1419px;" title="Mylta"></a>
-        <a href="lipovka.html" class="box" style="top: 783px; left: 1677px;" title="Lipovka"></a>
-        <a href="primorsk.html" class="box" style="top: 1455px; left: 294px;" title="Primorsk"></a>
-        <a href="gatka.html" class="box" style="top: 914px; left: 472px;" title="Gatka"></a>
-        <a href="georgopol.html" class="box" style="top: 615px; left: 420px;" title="Georgopol"></a>
-        <a href="yasnaya.html" class="box" style="top: 474px; left: 1249px;" title="Yasnaya"></a>
+        <!-- Clickable boxes for each drop location -->
+        <a href="school.html" class="box" style="top: 200px; left: 300px;" title="School"></a>
+        <a href="rozhok.html" class="box" style="top: 180px; left: 250px;" title="Rozhok"></a>
+        <a href="pochinki.html" class="box" style="top: 300px; left: 320px;" title="Pochinki"></a>
+        <a href="severny.html" class="box" style="top: 100px; left: 270px;" title="Severny"></a>
+        <a href="base.html" class="box" style="top: 400px; left: 320px;" title="Military Base"></a>
+        <a href="novo.html" class="box" style="top: 380px; left: 450px;" title="Novo"></a>
+        <a href="mylta.html" class="box" style="top: 320px; left: 420px;" title="Mylta"></a>
+        <a href="lipovka.html" class="box" style="top: 250px; left: 500px;" title="Lipovka"></a>
+        <a href="primorsk.html" class="box" style="top: 450px; left: 150px;" title="Primorsk"></a>
+        <a href="gatka.html" class="box" style="top: 280px; left: 200px;" title="Gatka"></a>
+        <a href="georgopol.html" class="box" style="top: 150px; left: 180px;" title="Georgopol"></a>
+        <a href="yasnaya.html" class="box" style="top: 140px; left: 360px;" title="Yasnaya"></a>
     </div>
 
     <div class="instructions">
         Tap on your drop to get rotations
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
-    <script>
-        window.onload = function() {
-            if (typeof imageMapResize === 'function') {
-                imageMapResize();
-            }
-        };
-    </script>
 </body>
 </html>
