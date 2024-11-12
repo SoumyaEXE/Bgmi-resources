@@ -35,25 +35,35 @@
             position: relative;
             max-width: 100%;
             margin: 0 auto;
-            width: 2000px;
+            width: 2000px; /* Fix image width */
         }
         img {
-            width: 100%;
+            width: 100%; /* Keep image scaling to 100% */
             height: auto;
         }
         .clickable-box {
             position: absolute;
-            width: 5%; /* Standardized box size */
-            height: 5%;
-            background-color: rgba(255, 0, 0, 0.7);
+            width: 2.5%; /* Reduced size */
+            height: 2.5%;
+            background-color: rgba(255, 0, 0, 0.7); /* Semi-transparent red */
             border: 2px solid #ff0000;
+            box-shadow: 0 0 10px 3px #ff0000; /* Red glow effect */
             cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out; /* Smooth transition for glowing effect */
         }
-        /* Yellow glow effect on click */
+        /* Active state on click */
         .clickable-box:active {
-            background-color: rgba(255, 255, 0, 0.7);
-            box-shadow: 0 0 20px 10px rgba(255, 255, 0, 1);
+            background-color: rgba(255, 255, 0, 0.7); /* Yellow glow when clicked */
+            box-shadow: 0 0 20px 10px rgba(255, 255, 0, 1); /* Stronger yellow glow */
+        }
+        /* Mobile optimization */
+        @media (max-width: 800px) {
+            .map-container {
+                width: 100%; /* Make the container responsive */
+            }
+            img {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -63,29 +73,32 @@
     <div class="map-container">
         <img src="Erangel_PNG.png" alt="Erangel Map">
         
-        <!-- Standardized clickable boxes -->
-        <a href="school.html" class="clickable-box" style="left: 49.7%; top: 39.4%;"></a>
-        <a href="rozhok.html" class="clickable-box" style="left: 47.3%; top: 34.4%;"></a>
+        <!-- Adjusted clickable overlay boxes for each location -->
+        <a href="school.html" class="clickable-box" style="left: 49.7%; top: 39.45%;"></a>
+        <a href="rozhok.html" class="clickable-box" style="left: 47.3%; top: 34.45%;"></a>
         <a href="pochinki.html" class="clickable-box" style="left: 40.7%; top: 47.9%;"></a>
-        <a href="severny.html" class="clickable-box" style="left: 44.1%; top: 13.0%;"></a>
-        <a href="base.html" class="clickable-box" style="left: 47.0%; top: 76.4%;"></a>
-        <a href="novo.html" class="clickable-box" style="left: 69.1%; top: 71.9%;"></a>
-        <a href="mylta.html" class="clickable-box" style="left: 70.9%; top: 56.3%;"></a>
-        <a href="lipovka.html" class="clickable-box" style="left: 83.8%; top: 39.2%;"></a>
-        <a href="primorsk.html" class="clickable-box" style="left: 14.7%; top: 72.8%;"></a>
+        <a href="severny.html" class="clickable-box" style="left: 44.15%; top: 13.0%;"></a>
+        <a href="base.html" class="clickable-box" style="left: 47.0%; top: 76.35%;"></a>
+        <a href="novo.html" class="clickable-box" style="left: 69.05%; top: 71.95%;"></a>
+        <a href="mylta.html" class="clickable-box" style="left: 71.0%; top: 56.25%;"></a>
+        <a href="lipovka.html" class="clickable-box" style="left: 83.85%; top: 39.15%;"></a>
+        <a href="primorsk.html" class="clickable-box" style="left: 14.7%; top: 72.75%;"></a>
         <a href="gatka.html" class="clickable-box" style="left: 23.6%; top: 45.7%;"></a>
-        <a href="georgopol.html" class="clickable-box" style="left: 21.0%; top: 30.8%;"></a>
-        <a href="yasnaya.html" class="clickable-box" style="left: 62.5%; top: 23.7%;"></a>
+        <a href="georgopol.html" class="clickable-box" style="left: 21.0%; top: 30.75%;"></a>
+        <a href="yasnaya.html" class="clickable-box" style="left: 62.45%; top: 23.7%;"></a>
     </div>
 
     <script>
+        // Ensuring the map is responsive on resizing
         window.onload = function() {
             const image = document.querySelector('img');
             const container = document.querySelector('.map-container');
 
-            container.style.width = image.naturalWidth + "px";
-            image.style.width = "100%";
+            // Handle scaling for mobile
+            container.style.width = image.naturalWidth + "px";  // Set width to 2000px (original image width)
+            image.style.width = "100%"; // Allow image to scale within container
         }
     </script>
+
 </body>
 </html>
