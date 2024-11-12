@@ -9,6 +9,8 @@
             text-align: center;
             background-color: #121212;
             color: #ffffff;
+            margin: 0;
+            padding: 0;
         }
         .navbar {
             width: 100%;
@@ -33,60 +35,57 @@
             position: relative;
             max-width: 100%;
             margin: 0 auto;
+            width: 2000px;
         }
         img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
         }
-        area {
-            outline: 2px solid red;
-            outline-offset: -2px;
+        .clickable-box {
+            position: absolute;
+            width: 5%; /* Standardized box size */
+            height: 5%;
+            background-color: rgba(255, 0, 0, 0.7);
+            border: 2px solid #ff0000;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+        /* Yellow glow effect on click */
+        .clickable-box:active {
+            background-color: rgba(255, 255, 0, 0.7);
+            box-shadow: 0 0 20px 10px rgba(255, 255, 0, 1);
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-
     <h1>Erangel Map - Competitive Rotations</h1>
     <div class="map-container">
-        <img src="Erangel_PNG.png" alt="Erangel Map" usemap="#erangelmap" id="erangel-map">
+        <img src="Erangel_PNG.png" alt="Erangel Map">
+        
+        <!-- Standardized clickable boxes -->
+        <a href="school.html" class="clickable-box" style="left: 49.7%; top: 39.4%;"></a>
+        <a href="rozhok.html" class="clickable-box" style="left: 47.3%; top: 34.4%;"></a>
+        <a href="pochinki.html" class="clickable-box" style="left: 40.7%; top: 47.9%;"></a>
+        <a href="severny.html" class="clickable-box" style="left: 44.1%; top: 13.0%;"></a>
+        <a href="base.html" class="clickable-box" style="left: 47.0%; top: 76.4%;"></a>
+        <a href="novo.html" class="clickable-box" style="left: 69.1%; top: 71.9%;"></a>
+        <a href="mylta.html" class="clickable-box" style="left: 70.9%; top: 56.3%;"></a>
+        <a href="lipovka.html" class="clickable-box" style="left: 83.8%; top: 39.2%;"></a>
+        <a href="primorsk.html" class="clickable-box" style="left: 14.7%; top: 72.8%;"></a>
+        <a href="gatka.html" class="clickable-box" style="left: 23.6%; top: 45.7%;"></a>
+        <a href="georgopol.html" class="clickable-box" style="left: 21.0%; top: 30.8%;"></a>
+        <a href="yasnaya.html" class="clickable-box" style="left: 62.5%; top: 23.7%;"></a>
     </div>
 
-    <map name="erangelmap">
-        <!-- School rotations -->
-        <area shape="rect" coords="994,789,1156,880" href="school.html" alt="School rotations">
-        <!-- Rozhok -->
-        <area shape="rect" coords="946,689,1108,755" href="rozhok.html" alt="Rozhok">
-        <!-- Pochinki Rotations -->
-        <area shape="rect" coords="814,958,1022,1099" href="pochinki.html" alt="Pochinki Rotations">
-        <!-- Severny rotations -->
-        <area shape="rect" coords="883,260,1028,367" href="severny.html" alt="Severny rotations">
-        <!-- Military rotations -->
-        <area shape="rect" coords="940,1527,1312,1716" href="base.html" alt="Military rotations">
-        <!-- Novo rotations -->
-        <area shape="rect" coords="1381,1439,1652,1584" href="novo.html" alt="Novo rotations">
-        <!-- Mylta rotations -->
-        <area shape="rect" coords="1419,1125,1595,1257" href="mylta.html" alt="Mylta rotations">
-        <!-- Lipovka rotations -->
-        <area shape="rect" coords="1677,783,1866,900" href="lipovka.html" alt="Lipovka rotations">
-        <!-- Primorsk rotation -->
-        <area shape="rect" coords="294,1455,499,1618" href="primorsk.html" alt="Primorsk rotation">
-        <!-- Gatka rotations with rect shape -->
-        <area shape="rect" coords="472,914,611,1006" href="gatka.html" alt="Gatka rotations">
-        <!-- Georgopol rotations -->
-        <area shape="rect" coords="420,615,588,749" href="georgopol.html" alt="Georgopol rotations">
-        <!-- Yasnaya rotations -->
-        <area shape="rect" coords="1249,474,1476,688" href="yasnaya.html" alt="Yasnaya rotations">
-    </map>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
     <script>
         window.onload = function() {
-            if (typeof imageMapResize === 'function') {
-                imageMapResize();
-            }
-        };
+            const image = document.querySelector('img');
+            const container = document.querySelector('.map-container');
+
+            container.style.width = image.naturalWidth + "px";
+            image.style.width = "100%";
+        }
     </script>
 </body>
 </html>
